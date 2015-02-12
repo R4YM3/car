@@ -1,0 +1,33 @@
+{
+  "name": "MyProject",
+  "version": "0.0.1",
+  "homepage": "https://github.com/R4YM3/test",
+  "authors": [
+    "R4YM3 <raymond@hetwebbureau.nl>"
+  ],
+  "description": "Description",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "font-awesome-sass": "~4.3.1",
+    "html5shiv": "~3.7.2",
+    "modernizr": "~2.8.3",
+    "jquery-placeholder": "~2.1.0"
+  }
+}

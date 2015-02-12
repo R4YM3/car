@@ -1,0 +1,27 @@
+{
+  "name": "MyProject",
+  "version": "0.0.1",
+  "description": "Description",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/R4YM3/test.git"
+  },
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": "Raymond Schweers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/R4YM3/test/issues"
+  },
+  "homepage": "https://github.com/R4YM3/test",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
