@@ -1,0 +1,51 @@
+$size-body: 62.5%;
+$size-reset: 10px;
+
+$size-xs: .300em;
+$size-s: .600em;
+@import mixin;
+
+$size-m: 1.000em;
+$size-l: 1.400em;
+$size-xl: 1.800em
+$size-xxl: 2.200em;
+
+$scale: 1.5;
+
+$radius: 1em;
+
+//vertical rhytym http://www.sitepoint.com/using-sass-build-custom-type-scale-vertical-rhythm/
+/*
+$bp-sizes: (
+  small: (
+    base-font-size: 16px,
+    base-line-height: 1.3,
+    scale: 1.25
+  ),
+  medium: (
+    base-font-size: 18px,
+    base-line-height: 1.4,
+    scale: 1.4
+  ),
+  large: (
+    base-font-size: 22px,
+    base-line-height: 1.5,
+    scale: 1.5
+  )
+);
+
+$breakpoints: (
+  small: 480px,
+  medium: 768px,
+  large: 1024px
+);
+
+$font-sizes: ( p, bq, ssh, sh, h, hero );
+
+$gutter-xs: $size-xs;
+$gutter-s: $size-s;
+$gutter: $size-m;
+$gutter-l: $size-l;
+$gutter-xl: $size-xl;
+$gutter-xxl: $size-xxl;
+*/
