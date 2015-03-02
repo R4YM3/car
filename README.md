@@ -31,3 +31,5 @@ Bundle commands:
 
 =======================================
 
+To update grunt packages run: [npm update]
+To update bower packages run: [bower update]
