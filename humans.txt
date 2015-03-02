@@ -12,4 +12,5 @@
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Grunt, Compass, Font-awesome, Shiv, jQuery, Placeholder
+    Ex. Apache Server Configs, jQuery, Modernizr, Normalize.css
