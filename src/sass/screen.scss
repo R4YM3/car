@@ -11,10 +11,12 @@ body
     background-color: $color;
 
     windows: 1;
+    border:1px solid red;
 }
 
 .font
 {
+    background-color: blue;
     display: inline;color: red;
     box-shadow: 3px 3px 3px red;
 }

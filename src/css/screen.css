@@ -7,16 +7,18 @@ body {
   border: 4px solid green;
   background-color: purple;
   windows: 1;
+  border: 1px solid red;
 }
 
-/* line 16, ../sass/screen.scss */
-#font {
+/* line 17, ../sass/screen.scss */
+.font {
+  background-color: blue;
   display: inline;
   color: red;
   box-shadow: 3px 3px 3px red;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 .google {
   font-family: arial;
   position: relative;
