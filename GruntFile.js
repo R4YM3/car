@@ -74,7 +74,7 @@ module.exports = function (grunt) {
         },
 
         //******************
-        //  DEV
+        //  DEV (SRC)
         //******************
 
         //validate js files
@@ -119,7 +119,7 @@ module.exports = function (grunt) {
         },
 
         //******************
-        //  TESTING
+        //  TEST
         //******************
 
         //combining js files

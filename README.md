@@ -6,7 +6,15 @@
 
 To run sass or bourbon install ruby and the desired framework
 
-For suggestions contact me Raymond Schweers
+For suggestions contact me Raymond Schweers: raymond@hetwebbureau.nl
+
+======================================
+
+[src] --> [test] --> [dist]
+
+[grunt test] deletes dist folder to remove confussion in versions
+[grunt dist] deletes test folder to remove confussion in versions
+REMEMBER: src is the folder from where you work!
 
 ======================================
 
@@ -14,20 +22,17 @@ Commands:
 [grunt csscomb] rearranges css attributes
 [grunt cssmin] compresses css
 [grunt csslint] gives warnings about bad css
-[grunt concat] combining multiple files
+[grunt concat] combining multiple js files
 [grunt imagemin] compresses images
-[grunt sass] sass
+[grunt compass] compass
 [grunt uglify] compresses js
 
 
 Bundle commands:
-[grunt sass] runs: sass + csscomb
-[grunt js] runs: uglify + contact
-[grunt img] runs: imagemin
-[grunt css] runs: compass + cssmin
 
 [grunt dev] runs: compass + csslint + cssmin
-[grunt dist] runs: compass + cssmin + uglify + concat + imagemin
+[grunt test] runs: reinstalls bowers dependecies, copies js files and minifies them, make a extra combined js file, empties dist and tmp folder
+[grunt dist] runs: copy js from test, copy minified css from src, imagemin, empties test folder
 
 =======================================
 
