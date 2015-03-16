@@ -11,7 +11,6 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         // TODO:
-        // watch csscomb
         // requirejs
         // test automation
 
@@ -68,7 +67,7 @@ module.exports = function (grunt) {
         watch: {
             compass: {
                 files: ['src/sass/*.scss'],
-                tasks: ['csslint', 'compass']
+                tasks: ['csscomb', 'csslint', 'compass']
             },
             jshint: {
                 files: ['src/js/**/*.js'],
@@ -110,6 +109,22 @@ module.exports = function (grunt) {
             },
             src: ['src/css/**/*.css']
           }
+        },
+
+        //sorting attributes in css
+        csscomb: {
+            default: {
+                options: {
+                    config: 'csscomb.json'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'src/sass/',
+                    src: ['**/*.scss'],
+                    dest: 'src/sass/',
+                    ext: '.scss'
+                }]
+            }
         },
 
         //compass compiling
