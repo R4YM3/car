@@ -6,7 +6,7 @@
 
 To run sass or bourbon install ruby and the desired framework
 
-For suggestions contact me Raymond Schweers: raymond@hetwebbureau.nl
+For suggestions contact me
 
 ======================================
 
