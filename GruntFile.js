@@ -11,7 +11,6 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         // TODO:
-        // watch js with hint
         // watch csscomb
         // requirejs
         // test automation
@@ -70,6 +69,10 @@ module.exports = function (grunt) {
             compass: {
                 files: ['src/sass/*.scss'],
                 tasks: ['csslint', 'compass']
+            },
+            jshint: {
+                files: ['src/js/**/*.js'],
+                tasks: ['jshint']
             }
         },
 
