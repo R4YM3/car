@@ -3,5 +3,4 @@
 function plugins() {
     window.alert('bla');
 }
-
 plugins();

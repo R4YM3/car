@@ -11,6 +11,8 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         // TODO:
+        // beautify
+        // blessed
         // requirejs
         // test automation
 
@@ -127,6 +129,13 @@ module.exports = function (grunt) {
             }
         },
 
+        //beatify js
+        "jsbeautifier" : {
+            files : ["src/**/*.js"],
+            options : {
+            }
+        },
+
         //compass compiling
         compass: {
             dist: {
@@ -202,6 +211,24 @@ module.exports = function (grunt) {
             }
         },
 
+        //bless (ie max selector)
+        bless: {
+            css: {
+                options: {
+                    banner: banner,
+                    cacheBuster: true,
+                    compress: true
+                },
+                files: [{
+                  expand: true,
+                  cwd: 'dist/css/',
+                  src: ['*.css', '**/*.css'],
+                  dest: 'dist/css/',
+                  ext: '.blessed.css',
+                }],
+            }
+        },
+
         // bower dependencies
         // bower: {
         //   options: {
@@ -257,6 +284,7 @@ module.exports = function (grunt) {
     //******************
 
     grunt.registerTask('dev', [
+        'csscomb',
         'compass',
         'csslint',
         'jshint',
