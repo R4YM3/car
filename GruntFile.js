@@ -11,8 +11,6 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         // TODO:
-        // beautify
-        // blessed
         // requirejs
         // test automation
 
@@ -144,6 +142,34 @@ module.exports = function (grunt) {
                 }
             }
         },
+
+        // requirejs: {
+        //     compile: {
+        //         options: {
+        //             name: '../config',
+        //             baseUrl: 'src/js/app',
+        //             out: 'src/js/app.min.js',
+        //             paths: {
+        //                 'jquery': '../../../components/jquery/jquery.min',
+        //                 'modernizr': '../../../components/modernizr/modernizr',
+        //                 'respond': '../../../components/respond/respond.min',
+        //                 'requireLib': '../../../components/requirejs/require'
+        //             },
+        //             shim: {
+        //                 'jquery': {
+        //                     exports: '$'
+        //                 },
+        //                 'modernizr': {
+        //                     exports: 'Modernizr'
+        //                 }
+        //             },
+        //             include: ['requireLib'],
+        //             //generateSourceMaps: true,
+        //             preserveLicenseComments: false,
+        //             optimize: 'uglify2'
+        //         }
+        //     }
+        // },
 
         //******************
         //  TEST
