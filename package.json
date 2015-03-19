@@ -18,5 +18,8 @@
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-csscomb": "^3.0.0"
+  },
+  "scripts": {
+    "postinstall": "bower install"
   }
 }
