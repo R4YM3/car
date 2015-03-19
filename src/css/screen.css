@@ -3,21 +3,20 @@ body {
   font-family: arial;
   position: relative;
   display: block;
-  color: blue;
-  border: 4px solid green;
+  color: green;
+  border: 1px solid red;
   background-color: purple;
   windows: 1;
 }
-
-/* line 16, ../sass/screen.scss */
-#font {
+/* line 15, ../sass/screen.scss */
+body .font {
   display: inline;
   color: red;
+  background-color: blue;
   box-shadow: 3px 3px 3px red;
 }
-
 /* line 22, ../sass/screen.scss */
-.google {
+body .google {
   font-family: arial;
   position: relative;
   top: 4px;

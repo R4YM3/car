@@ -6,25 +6,26 @@ body
 
     position: relative;
 
-    display: block;color: blue;
-    border: 4px solid green;
+    display: block;color: green;
+    border: 1px solid red;
     background-color: $color;
 
     windows: 1;
-}
 
-.font
-{
-    display: inline;color: red;
-    box-shadow: 3px 3px 3px red;
-}
+    .font
+    {
+        display: inline;color: red;
+        background-color: blue;
+        box-shadow: 3px 3px 3px red;
+    }
 
-.google
-{
-    font-family: arial;position: relative;top: 4px;
+    .google
+    {
+        font-family: arial;position: relative;top: 4px;
 
-    box-sizing: border-box;
-    margin-left: 5px;color: blue;
-    outline: 5px solid red;
-    text-shadow: 3px 2px blue;
+        box-sizing: border-box;
+        margin-left: 5px;color: blue;
+        outline: 5px solid red;
+        text-shadow: 3px 2px blue;
+    }
 }
