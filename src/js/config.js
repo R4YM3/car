@@ -16,7 +16,11 @@ require.config({
     }
 });
 
-require([
-    'polyfills',
-    'menu'
-]);
+// require([
+//     'polyfills',
+//     'menu'
+// ]);
+
+require(['helpers/alert'], function(Y){
+    Y.alert('alert');
+});
