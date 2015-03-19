@@ -1,3 +1,5 @@
+'use strict';
+
 require.config({
     baseUrl: '../js/app',
     paths: {

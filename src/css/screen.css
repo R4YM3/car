@@ -1,6 +1,7 @@
 /* line 3, ../sass/screen.scss */
 body {
   font-family: arial;
+  font-size: 10px;
   position: relative;
   display: block;
   color: green;
@@ -8,14 +9,14 @@ body {
   background-color: purple;
   windows: 1;
 }
-/* line 15, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 body .font {
   display: inline;
   color: red;
   background-color: blue;
   box-shadow: 3px 3px 3px red;
 }
-/* line 22, ../sass/screen.scss */
+/* line 23, ../sass/screen.scss */
 body .google {
   font-family: arial;
   position: relative;
