@@ -1,29 +1,127 @@
-/* line 3, ../sass/screen.scss */
+/*
+    Available colors
+    see var.sass for specs
+
+    @extend %color--light
+    @extend %color--light-lighten
+    @extend %color--light-darken
+    @extend %color--dark
+    @extend %color--dark-lighten
+    @extend %color--dark-darken
+    @extend %color--call-to-action
+    @extend %color--call-to-action-lighten
+    @extend %color--call-to-action-darken
+    @extend %color--call-to-action-inverted
+    @extend %color--call-to-action-inverted-lighten
+    @extend %color--call-to-action-inverted-darken
+    @extend %color--1
+    @extend %color--1-lighten
+    @extend %color--1-darken
+    @extend %color--2
+    @extend %color--2-lighten
+    @extend %color--2-darken
+    @extend %color--3
+    @extend %color--3-lighten
+    @extend %color--3-darken
+*/
+/*
+    Available typo's
+    see var.sass for specs
+
+    @extend %font--1
+    @extend %font--2
+    @extend %font--3
+
+    @extend %font--icon
+*/
+/* line 13, ../sass/_extends/_font.scss */
+h1, h2,
+h3 {
+  font-family: "Oxygen", "Helvetica Neue", "Lucida Sans Unicode", "Trebuchet MS";
+}
+
+/* line 13, ../sass/_extends/_font.scss */
+h4,
+h5,
+h6, body {
+  font-family: "Source Sans Pro", "Helvetica", "Arial", "sans-serif";
+}
+
+/*
+    Available typo's
+    see var.sass for specs
+
+    @extend %v-rhythm--reset
+    @extend %v-rhythm--s
+    @extend %v-rhythm--body
+    @extend %v-rhythm--m
+    @extend %v-rhythm--l
+    @extend %v-rhythm--xl
+*/
+/* line 15, ../sass/_extends/_vertical-rhythm.scss */
+h4,
+h5,
+h6 {
+  font-size: 1.25em;
+  line-height: 1.1em;
+  margin-top: 1.1em;
+  margin-bottom: 0em;
+}
+
+/* line 15, ../sass/_extends/_vertical-rhythm.scss */
+h2,
+h3 {
+  font-size: 1.375em;
+  line-height: 1em;
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+
+/* line 15, ../sass/_extends/_vertical-rhythm.scss */
+h1 {
+  font-size: 1.5em;
+  line-height: 1.8333em;
+  margin-top: 0.9167em;
+  margin-bottom: 0em;
+}
+
+/*
+    Available colors
+    see var.sass for specs
+
+    @extend %button--color-light
+    @extend %button--color-light-lighten
+    @extend %button--color-light-darken
+    @extend %button--color-dark
+    @extend %button--color-dark-lighten
+    @extend %button--color-dark-darken
+    @extend %button--color-call-to-action
+    @extend %button--color-call-to-action-lighten
+    @extend %button--color-call-to-action-darken
+    @extend %button--color-call-to-action-inverted
+    @extend %button--color-call-to-action-inverted-lighten
+    @extend %button--color-call-to-action-inverted-darken
+    @extend %button--color-1
+    @extend %button--color-1-lighten
+    @extend %button--color-1-darken
+    @extend %button--color-2
+    @extend %button--color-2-lighten
+    @extend %button--color-2-darken
+    @extend %button--color-3
+    @extend %button--color-3-lighten
+    @extend %button--color-3-darken
+*/
+@font-face {
+  font-family: "streamline";
+  src: url('/fonts/streamline/streamline.ttf') format('truetype'), url('/fonts/streamline/streamline.eot') format('embedded-opentype'), url('/fonts/streamline/streamline.woff') format('woff'), url('/fonts/streamline/streamline.svg') format('svg');
+}
+/* line 1, ../sass/templates/_default.scss */
+html,
 body {
-  font-family: arial;
-  font-size: 10px;
-  position: relative;
-  display: block;
-  color: green;
-  border: 1px solid red;
-  background-color: purple;
-  windows: 1;
-}
-/* line 16, ../sass/screen.scss */
-body .font {
-  display: inline;
-  color: red;
-  background-color: blue;
-  box-shadow: 3px 3px 3px red;
-}
-/* line 23, ../sass/screen.scss */
-body .google {
-  font-family: arial;
-  position: relative;
-  top: 4px;
-  box-sizing: border-box;
-  margin-left: 5px;
-  color: blue;
-  outline: 5px solid red;
-  text-shadow: 3px 2px blue;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: black;
 }

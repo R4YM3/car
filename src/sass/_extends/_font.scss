@@ -1,0 +1,20 @@
+/*
+    Available typo's
+    see var.sass for specs
+
+    @extend %font--1
+    @extend %font--2
+    @extend %font--3
+
+    @extend %font--icon
+*/
+@each $style in map-keys(map-get($global, font))
+{
+    %font--#{$style}
+    {
+        font-family: map-fetch($global, font $style 1),
+        map-fetch($global, font $style 2),
+        map-fetch($global, font $style 3),
+        map-fetch($global, font $style 4);
+    }
+}

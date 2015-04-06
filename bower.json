@@ -16,5 +16,8 @@
     "jquery": {
       "main": "jquery.min.js"
     }
+  },
+  "devDependencies": {
+    "sass-easing": "*"
   }
 }

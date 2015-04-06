@@ -1,0 +1,33 @@
+/*
+    Available colors
+    see var.sass for specs
+
+    @extend %color--light
+    @extend %color--light-lighten
+    @extend %color--light-darken
+    @extend %color--dark
+    @extend %color--dark-lighten
+    @extend %color--dark-darken
+    @extend %color--call-to-action
+    @extend %color--call-to-action-lighten
+    @extend %color--call-to-action-darken
+    @extend %color--call-to-action-inverted
+    @extend %color--call-to-action-inverted-lighten
+    @extend %color--call-to-action-inverted-darken
+    @extend %color--1
+    @extend %color--1-lighten
+    @extend %color--1-darken
+    @extend %color--2
+    @extend %color--2-lighten
+    @extend %color--2-darken
+    @extend %color--3
+    @extend %color--3-lighten
+    @extend %color--3-darken
+*/
+@each $style in map-keys(map-get($global, color))
+{
+    %color--#{$style}
+    {
+        font-size: map-fetch($global, color $style color );
+    }
+}

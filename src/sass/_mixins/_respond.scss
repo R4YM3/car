@@ -1,0 +1,69 @@
+@mixin respond($media)
+{
+    @if $media == xs
+    {
+        @media (max-width: map-fetch($global, breakpoints xs ))
+        {
+            @content;
+        }
+    }
+    @if $media == s
+    {
+        @media (max-width: map-fetch($global, breakpoints s ))
+        {
+            @content;
+        }
+    }
+    @else if $media == m
+    {
+        @media (max-width: map-fetch($global, breakpoints m ))
+        {
+            @content;
+        }
+    }
+    @else if $media == l
+    {
+        @media (min-width:map-fetch($global, breakpoints m)) and (max-width: map-fetch($global, breakpoints l ))
+        {
+            @content;
+        }
+    }
+    @else if $media == xl
+    {
+        @media (max-width: map-fetch($global, breakpoints xl ))
+        {
+            @content;
+        }
+    }
+    @else if $media == xxl
+    {
+        @media (min-width: map-fetch($global, breakpoints xxl ))
+        {
+            @content;
+        }
+    }
+
+    @else if $media == retina
+    {
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+        {
+            @content
+        }
+    }
+
+    @else if $media == touch
+    {
+        html.touch &
+        {
+            @content
+        }
+    }
+
+    @else if $media == no-touch
+    {
+        html:not(.touch) &
+        {
+            @content
+        }
+    }
+}

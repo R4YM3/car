@@ -1,0 +1,15 @@
+// Google fonts
+// Oxygen
+// Source sans pro
+//@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic,600italic,700italic|Oxygen:400,300,700);
+
+@include font-face(
+    'streamline',
+    font-files(
+        'streamline/streamline.ttf',
+        'streamline/streamline.eot',
+        'streamline/streamline.woff',
+        'streamline/streamline.svg'
+    )
+);
+//define icon also in extends/font

@@ -1,51 +1,188 @@
-$size-body: 62.5%;
-$size-reset: 10px;
+$prefix: global--;
 
-$size-xs: .300em;
-$size-s: .600em;
-@import mixin;
+$global: (
 
-$size-m: 1.000em;
-$size-l: 1.400em;
-$size-xl: 1.800em
-$size-xxl: 2.200em;
+    color: (
 
-$scale: 1.5;
+        light: (
+            color: #f2f2f2
+        ),
+        light-lighten: (
+            color: lighten(#f2f2f2, 15%)
+        ),
+        light-darken: (
+            color: darken(#f2f2f2, 15%)
+        ),
 
-$radius: 1em;
+        dark: (
+            color: #0b0a0b
+        ),
+        dark-lighten: (
+            color: lighten(#0b0a0b, 15%)
+        ),
+        dark-darken: (
+            color: darken(#0b0a0b, 15%)
+        ),
 
-//vertical rhytym http://www.sitepoint.com/using-sass-build-custom-type-scale-vertical-rhythm/
-/*
-$bp-sizes: (
-  small: (
-    base-font-size: 16px,
-    base-line-height: 1.3,
-    scale: 1.25
-  ),
-  medium: (
-    base-font-size: 18px,
-    base-line-height: 1.4,
-    scale: 1.4
-  ),
-  large: (
-    base-font-size: 22px,
-    base-line-height: 1.5,
-    scale: 1.5
-  )
+        call-to-action: (
+            color: #bd516f
+        ),
+        call-to-action-lighten: (
+            color: lighten(#bd516f, 15%)
+        ),
+        call-to-action-darken: (
+            color: darken(#bd516f, 15%)
+        ),
+
+        call-to-action-inverted: (
+            color: #42ae90
+        ),
+        call-to-action-inverted-lighten: (
+            color: lighten(#42ae90, 15%)
+        ),
+        call-to-action-inverted-darken: (
+            color: darken(#42ae90, 15%)
+        ),
+
+        1: (
+            color: #a69786
+        ),
+        1-lighten: (
+            color: lighten(#a69786, 15%)
+        ),
+        1-darken: (
+            color: darken(#a69786, 15%)
+        ),
+
+        2: (
+            color: #584332
+        ),
+        2-lighten: (
+            color: lighten(#584332, 15%)
+        ),
+        2-darken: (
+            color: darken(#584332, 15%)
+        ),
+
+        3: (
+            color: #bd516f
+        ),
+        3-lighten: (
+            color: lighten(#bd516f, 15%)
+        ),
+        3-darken: (
+            color: darken(#bd516f, 15%)
+        )
+    ),
+
+    font: (
+        //max 4 each
+        1: (
+            1: 'Oxygen',
+            2: 'Helvetica Neue',
+            3: 'Lucida Sans Unicode',
+            4: 'Trebuchet MS'
+        ),
+        2: (
+            1: 'Source Sans Pro',
+            2: 'Helvetica',
+            3: 'Arial',
+            4: 'sans-serif'
+        ),
+        3: (
+            1: 'Arial',
+            2: 'arial',
+            3: 'helvetica',
+            4: 'sans-serif',
+        ),
+        4: (
+            1: 'streamline',
+            2: 'streamline',
+            3: 'streamline',
+            4: 'streamline'
+        )
+    ),
+
+    typo: (
+        //based on: https://drewish.com/tools/vertical-rhythm/
+        //base font-size:16px
+        //base line-height: 22px
+
+        reset: (
+            font-size: 16px,
+            line-height: 22px,
+            margin-top: 1.5714em,
+            margin-bottom: .0000em,
+        ),
+
+        s: (
+            font-size: .8750em, /* 14px */
+            line-height: 1.5714em, /* 22px */
+            margin-top: 1.5714em,
+            margin-bottom: .0000em,
+        ),
+
+        body: (
+            font-size: 1.0000em, /* 16px */
+            line-height: 1.3750em, /* 22px */
+            margin-top: 1.3750em,
+            margin-bottom: .0000em,
+        ),
+
+        m: (
+            font-size: 1.1250em, /* 18px */
+            line-height: 1.2222em, /* 22px */
+            margin-top: 1.2222em,
+            margin-bottom: .0000em,
+        ),
+
+        l: (
+            font-size: 1.2500em, /* 20px */
+            line-height: 1.1000em, /* 22px */
+            margin-top: 1.1000em,
+            margin-bottom: .0000em,
+        ),
+
+        xl: (
+            font-size: 1.3750em, /* 22px */
+            line-height: 1.0000em, /* 22px */
+            margin-top: 1.0000em,
+            margin-bottom: .0000em,
+        ),
+
+        xxl: (
+             font-size: 1.5000em, /* font-size: 24px */
+             line-height: 1.8333em, /* line-height: 44px */
+             margin-top: .9167em,
+             margin-bottom: .0000em
+        )
+    ),
+
+    breakpoints: (
+        xs: 320px,
+        s: 480px,
+        m: 768px,
+        l: 1024px,
+        xl: 1140px,
+        xxl: 1280px
+    ),
+
+    opacity: (
+        hide: 0,
+        show: 1,
+        xs: .0,
+        s: .25,
+        m: .5,
+        l: .75,
+        xl: 1
+    ),
+
+    box-shadow: (
+        hide: 0 0 0 0 transparent,
+        xs: 0 4px 1px -2px rgba(0,0,0,.5),
+        s: 0 4px 1px -2px rgba(0,0,0,.5),
+        m: 0 4px 1px -2px rgba(0,0,0,.5),
+        l: 0 4px 1px -2px rgba(0,0,0,.5),
+        xl: 0 4px 1px -2px rgba(0,0,0,.5)
+    ),
 );
-
-$breakpoints: (
-  small: 480px,
-  medium: 768px,
-  large: 1024px
-);
-
-$font-sizes: ( p, bq, ssh, sh, h, hero );
-
-$gutter-xs: $size-xs;
-$gutter-s: $size-s;
-$gutter: $size-m;
-$gutter-l: $size-l;
-$gutter-xl: $size-xl;
-$gutter-xxl: $size-xxl;
-*/

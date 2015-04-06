@@ -1,32 +1,22 @@
-$color: purple;
+@charset 'UTF-8';
 
-body
-{
-    font-family: arial;
-    font-size: 10px;
+//compass
+@import 'compass/css3';
 
-    position: relative;
+//global
+@import '../../components/sass-easing/sass-easing.scss';
+@import 'var.scss';
 
-    display: block;color: green;
-    border: 1px solid red;
-    background-color: $color;
+@import '_functions/all.scss';
+@import '_mixins/all.scss';
+@import '_extends/all.scss';
 
-    windows: 1;
+//atoms
+@import 'atoms/fonts.scss';
+//@import 'atoms/icons.scss';
+@import 'atoms/heading.scss';
 
-    .font
-    {
-        display: inline;color: red;
-        background-color: blue;
-        box-shadow: 3px 3px 3px red;
-    }
+//templates
+@import 'templates/default.scss';
 
-    .google
-    {
-        font-family: arial;position: relative;top: 4px;
-
-        box-sizing: border-box;
-        margin-left: 5px;color: blue;
-        outline: 5px solid red;
-        text-shadow: 3px 2px blue;
-    }
-}
+//pages
