@@ -2,20 +2,14 @@
   "name": "boilerplate",
   "private": true,
   "dependencies": {
-    "jquery": "~1.10.0",
-    "underscore": "~1.5.1",
-    "requirejs": "~2.1.16",
-    "respond": "~1.2.0",
-    "handlebars": "~1.0.0",
-    "modernizr": "~2.8.3"
-  },
-  "resolutions": {
-    "jquery": "~1.10.0"
-  },
-  "overrides": {
-    "jquery": {
-      "main": "jquery.min.js"
-    }
+    "jquery": "~1.11.1",
+    "modernizr": "~2.8.3",
+    "fontawesome": "~4.3.0",
+    "sticky-kit": "~1.1.2",
+    "requirejs": "~2.1.17",
+    "fontface-novecento-wide": "*",
+    "html5shiv": "~3.7.2",
+    "meyer-reset": "*"
   },
   "devDependencies": {
     "sass-easing": "*"
