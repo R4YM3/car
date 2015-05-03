@@ -20,66 +20,19 @@ src is the folder from where you work. Don't work in test and dist, changes will
 Copy dist folder when going to deploy
 
 $ grunt dev
-deletes dist and test folder ########
+deletes dist and test folder
 
 $ grunt watch
-################
+watches for changes and lints, checks and compiles them (css into .tmp).
 
 $ grunt test
-deletes dist folder to remove confussion in versions
+deletes .tmp and .test folder and does all dev tasks and copies them in the test folder (test task are not yet added).
 
 $ grunt dist
-deletes test folder to remove confussion in versions
+deletes .tmp and test folder and does the following:
+dev + test task + compresses all files with build date bannre and compies them into dist folder.
 
-You can add  a grunt deploy test if your environment allowed it
-
-======================================
-
-Manual commands:
-
-$ grunt reset-tmp
-cleans tmp folder by deleting it and making tmp folder again
-
-$ grunt clean
-deletes components, tmp, test and dist folder
-
-$ grunt clean:test
-deletes test folder
-
-$ grunt clean:dist
-deletes dist folder
-
-$ grunt clean:bower
-deletes components folder
-
-$ grunt clean:tmp
-deletes tmp\
- folder
-
-===============
-
-Specific commands:
-
-$ grunt csscomb
-rearranges attributes in sass files (src/sass)
-
-$ grunt cssmin
-compresses css files and place them in dist/css
-
-$ grunt csslint
-analyzes css files in src/css
-
-$ grunt concat
-takes all the js files in src/js and combines them into one file concat.min.js that's saved in test/js
-
-$ grunt imagemin
-copies all images from src/img intro dist/img and compessses them
-
-$ grunt compass
-compiles compass/sass files in src folder see config.rb in src for more information
-
-$ grunt uglify
-compresses js and copies them into test/js folder
+You can add  a grunt deploy test if your environment allows it
 
 =======================================
 
