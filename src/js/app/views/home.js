@@ -1,5 +1,5 @@
-define(['jquery'], function($){
+define(['jquery'], function($) {
     'use strict';
 
-    $( "#foo" ).text("world!");
+    $("#foo").text("world!");
 });
