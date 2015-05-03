@@ -2,13 +2,27 @@
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
+  // Banner in files
   var banner = '/*\n<%= pkg.name %> <%= pkg.version %>';
     banner += '- <%= pkg.description %>\n<%= pkg.repository.url %>\n';
-    banner += 'Build by - <%= pkg.contributors.join(", ") %>\n';
     banner += 'Built on <%= grunt.template.today("yyyy-mm-dd") %>\n*/\n';
+
+  // Configurable paths
+  var config = {
+    app: 'src',
+    images: 'img',
+    html: 'html',
+    js: 'js',
+    test: 'test',
+    dist: 'dist',
+    tmp: '.tmp'
+  };
 
   grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        // Project settings
+        config: config,
 
         // TODO:
         // requirejs
@@ -21,44 +35,44 @@ module.exports = function (grunt) {
         //clean bower and tmp folder
         clean: {
             bower: 'components',
-            tmp: 'tmp',
-            test: 'test', //not used
-            dist: 'dist'
+            tmp: '<%= config.tmp %>',
+            test: '<%= config.test %>', //not used
+            dist: '<%= config.dist %>',
         },
 
         //copy files
         copy: {
             unit: {
                 expand: true,
-                cwd: 'test/unit/fixtures/components',
+                cwd: '<%= config.test %>/unit/fixtures/components',
                 src: ['**/*'],
-                dest: 'tmp/components'
+                dest: '<%= config.tmp %>/components'
             },
             acceptance: {
                 expand: true,
-                cwd: 'test/acceptance/fixtures',
+                cwd: '<%= config.test %>/acceptance/fixtures',
                 src: ['*.js', '!*-expected.js'],
-                dest: 'tmp/'
+                dest: '<%= config.tmp %>/'
             },
             test: {
                 expand: true,
-                cwd: 'src/js',
+                cwd: '<%= config.app %>/js',
                 src: ['**'],
-                dest: 'test/js'
+                dest: '<%= config.test %>/js'
             },
             dist: {
                 files: [
                     {
                         expand: true,
-                        cwd: 'src/img',
+                        cwd: '<%= config.app %>/img',
                         src: ['**'],
-                        dest: 'dist/img'
+                        dest: '<%= config.dist %>/img'
                     },
                     {
                         expand: true,
-                        cwd: 'test/js',
+                        cwd: '<%= config.test %>/js',
                         src: ['**'],
-                        dest: 'dist/js'
+                        dest: '<%= config.dist %>/js'
                     }
                 ]
             }
@@ -66,11 +80,11 @@ module.exports = function (grunt) {
 
         watch: {
             compass: {
-                files: ['src/sass/*.scss'],
+                files: ['<%= config.app %>/sass/*.scss'],
                 tasks: ['csscomb', 'csslint', 'compass']
             },
             jshint: {
-                files: ['src/js/**/*.js'],
+                files: ['<%= config.app %>/js/**/*.js'],
                 tasks: ['jshint']
             }
         },
@@ -88,7 +102,7 @@ module.exports = function (grunt) {
             'Gruntfile.js',
             //'lib/*.js',
             //'bin/*.js',
-            'src/**/*.js'
+            '<%= config.app %>/**/*.js'
           ]
         },
 
@@ -101,13 +115,13 @@ module.exports = function (grunt) {
             options: {
               import: 2
             },
-            src: ['src/css/**/*.css']
+            src: ['<%= config.app %>/css/**/*.css']
           },
           lax: {
             options: {
               import: false
             },
-            src: ['src/css/**/*.css']
+            src: ['<%= config.app %>/css/**/*.css']
           }
         },
 
@@ -119,9 +133,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'src/sass/',
+                    cwd: '<%= config.app %>/sass/',
                     src: ['**/*.scss'],
-                    dest: 'src/sass/',
+                    dest: '<%= config.app %>/sass/',
                     ext: '.scss'
                 }]
             }
@@ -129,7 +143,7 @@ module.exports = function (grunt) {
 
         //beatify js
         "jsbeautifier" : {
-            files : ["src/**/*.js"],
+            files : ["<%= config.app %>/**/*.js"],
             options : {
             }
         },
@@ -138,7 +152,7 @@ module.exports = function (grunt) {
         compass: {
             dist: {
                 options: {
-                    config: 'src/config.rb'
+                    config: '<%= config.app %>/config.rb'
                 }
             }
         },
@@ -183,8 +197,8 @@ module.exports = function (grunt) {
             },
             build: {
                 files: [{
-                    src: ['test/js/**/*.js'],
-                    dest: 'test/js/concat.js'
+                    src: ['<%= config.test %>/js/**/*.js'],
+                    dest: '<%= config.test %>/js/concat.js'
                 }]
             },
         },
@@ -193,18 +207,18 @@ module.exports = function (grunt) {
             target: {
                 files: [{
                   expand: true,
-                  cwd: 'src/js/',
+                  cwd: '<%= config.app %>/js/',
                   src: ['*.js', '**/*.js'],
-                  dest: 'test/js/',
+                  dest: '<%= config.test %>/js/',
                   ext: '.min.js',
                 }],
             },
             concat: {
                 files: [{
                     expand: true,
-                    cwd: 'test/js',
+                    cwd: '<%= config.test %>/js',
                     src: ['concat.js', 'concat.min.js'],
-                    dest: 'test/js',
+                    dest: '<%= config.test %>/js',
                     ext: '.min.js'
                 }]
             }
@@ -220,8 +234,8 @@ module.exports = function (grunt) {
                 options: {
                     optimizationLevel: 3
                 },
-                src: ['dist/img/*.*'],
-                dest: 'dist/img'
+                src: ['<%= config.dist %>/img/*.*'],
+                dest: '<%= config.dist %>/img'
             }
         },
         //compressing css
@@ -229,9 +243,9 @@ module.exports = function (grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'src/css',
+                    cwd: '<%= config.app %>/css',
                     src: ['*.css', '!*.min.css'],
-                    dest: 'dist/css',
+                    dest: '<%= config.dist %>/css',
                     ext: '.min.css'
                 }]
             }
@@ -247,9 +261,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                   expand: true,
-                  cwd: 'dist/css/',
+                  cwd: '<%= config.dist %>/css/',
                   src: ['*.css', '**/*.css'],
-                  dest: 'dist/css/',
+                  dest: '<%= config.dist %>/css/',
                   ext: '.blessed.css',
                 }],
             }
