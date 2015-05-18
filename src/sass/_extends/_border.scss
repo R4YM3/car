@@ -1,0 +1,5 @@
+/* @extend %border--none */
+@include placeholder(border--none)
+{
+    border: 0;
+}

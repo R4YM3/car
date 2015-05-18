@@ -1,23 +1,17 @@
 /*
-    Available typo's
+    Available vertical rhythm's
     see var.sass for specs
-
-    @extend %v-rhythm--reset
-    @extend %v-rhythm--s
-    @extend %v-rhythm--body
-    @extend %v-rhythm--m
-    @extend %v-rhythm--l
-    @extend %v-rhythm--xl
 */
-//vertical rhythm
-@each $style in map-keys(map-get($global, typo))
-{
-    %v-rhythm--#{$style}
-    {
-        font-size: map-fetch($global, typo $style font-size  );
-        line-height: map-fetch($global, typo $style line-height );
 
-        margin-top: map-fetch($global, typo $style margin-top  );
-        margin-bottom: map-fetch($global, typo $style margin-bottom  );
+@each $name, $style in $typo
+{
+    /*@extend %v-rhythm--#{$name} */
+    @include placeholder(v-rhythm--#{$name})
+    {
+        font-size: map-get($style, font-size);
+        line-height: map-get($style, line-height);
+
+        margin-top: map-get($style, margin-top);
+        margin-bottom: map-get($style, margin-bottom);
     }
 }

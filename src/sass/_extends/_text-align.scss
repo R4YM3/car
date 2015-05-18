@@ -1,0 +1,9 @@
+$text-aligns: ("left", "center", "right", "inherit") !default;
+@for $i from 1 through length($text-aligns) {
+
+   @include placeholder(text-align--#{nth($text-aligns, $i)})
+   {
+        /* @extend %text-align--#{nth($text-aligns, $i)} */
+        text-align: nth($text-aligns, $i);
+   }
+}

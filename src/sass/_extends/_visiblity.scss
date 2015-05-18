@@ -1,0 +1,13 @@
+/*
+    @extend %visibility--hidden
+    @extend %visibility--visible
+*/
+
+@include placeholder(visibility--hidden)
+{
+    visibility: hidden;
+}
+@include placeholder(visibility--visible)
+{
+    visibility: visible;
+}

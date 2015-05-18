@@ -1,0 +1,9 @@
+$cursors: (auto, pointer, text, wait, help, none) !default;
+@for $i from 1 through length($cursors) {
+
+   @include placeholder(cursor--#{nth($cursors, $i)})
+   {
+        /* @extend %cursor--#{nth($cursors, $i)} */
+        cursor: nth($cursors, $i);
+   }
+}

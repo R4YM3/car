@@ -1,0 +1,20 @@
+/*
+    values are in percentages
+
+    @extend %min-height--none
+    @extend %min-height--half
+    @extend %min-height--full
+*/
+
+@include placeholder(min-height--none)
+{
+    min-height: 0;
+}
+@include placeholder(min-height--half)
+{
+    min-height: 50%;
+}
+@include placeholder(min-height--full)
+{
+    min-height: 100%;
+}

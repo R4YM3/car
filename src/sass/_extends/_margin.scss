@@ -1,0 +1,28 @@
+/*
+    Available margins
+    see var.sass for specs
+*/
+@each $name, $size in $sizes
+{
+    @include placeholder(margin--#{$name})
+    {
+        /* @extend %margin--#{($name)} */
+        margin: $size;
+    }
+
+    @each $name-child, $size-child in $sizes
+    {
+        /* @extend %margin--#{($name)}--#{$name-child} */
+        @include placeholder(margin--#{$name}-#{$name-child})
+        {
+            margin: map-get($sizes, $name) map-get($sizes, $name-child);
+        }
+    }
+}
+
+@include placeholder(margin--center)
+{
+    /* @extend %margin--center*/
+    margin-right: auto;
+    margin-left: auto;
+}

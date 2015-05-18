@@ -1,0 +1,10 @@
+$box-sizings: (border-box, content-box, padding-box) !default;
+@for $i from 1 through length($box-sizings) {
+
+   @include placeholder(box-sizing--#{nth($box-sizings, $i)})
+   {
+        /* @extend %box-sizing--#{nth($box-sizings, $i)} */
+        -ms-box-sizing: nth($box-sizings, $i);
+        @include box-sizing(nth($box-sizings, $i));
+   }
+}

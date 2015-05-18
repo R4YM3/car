@@ -1,0 +1,12 @@
+/*
+    Available colors
+    see var.sass for specs
+*/
+@each $name, $color in $colors
+{
+    /* @extend %color--#{$name} */
+    @include placeholder(color--#{$name})
+    {
+        color: $color;
+    }
+}

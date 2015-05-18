@@ -1,0 +1,19 @@
+/*
+    values are in percentages
+
+    @extend %height--none
+    @extend %height--half
+    @extend %height--full
+*/
+@include placeholder(height--none)
+{
+    height: 0;
+}
+@include placeholder(height--half)
+{
+    height: 50%;
+}
+@include placeholder(height--full)
+{
+    height: 100%;
+}

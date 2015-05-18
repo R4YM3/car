@@ -1,0 +1,15 @@
+/*
+    Available transition-duration's
+    see var.sass for specs
+*/
+
+$durations: map-get($transitions, speed) !default;
+
+@each $name, $style in $durations
+{
+    /* @extend %transition-duration--#{$name} */
+    @include placeholder(transition-duration--#{$name})
+    {
+        @include transition-duration($style);
+    }
+}

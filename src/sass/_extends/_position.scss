@@ -1,0 +1,9 @@
+$positions: (static, relative, absolute, fixed, inherit) !default;
+@for $i from 1 through length($positions) {
+
+   @include placeholder(position--#{nth($positions, $i)})
+   {
+        /* @extend %position--#{nth($positions, $i)} */
+        position: nth($positions, $i);
+   }
+}

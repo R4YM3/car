@@ -1,0 +1,9 @@
+$overflows: ("auto", "hidden", "visible", "scroll") !default;
+@for $i from 1 through length($overflows) {
+
+   @include placeholder(overflow--#{nth($overflows, $i)})
+   {
+        /* @extend %overflow--#{nth($overflows, $i)} */
+        overflow: nth($overflows, $i);
+   }
+}

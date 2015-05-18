@@ -1,0 +1,7 @@
+/*
+    @extend %ouline--none
+*/
+@include placeholder(outline--none)
+{
+    outline: 0;
+}

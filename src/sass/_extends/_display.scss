@@ -1,0 +1,47 @@
+/*
+    Available displays
+    see display.sass for specs
+*/
+
+$a: ("hide", "inactive", "disabled", "none") !default;
+@for $i from 1 through length($a) {
+
+   @include placeholder(display--#{nth($a, $i)})
+   {
+        /* @extend %display--#{nth($a, $i)} */
+       display: none;
+   }
+}
+
+$b: ("show", "block", "active") !default;
+@for $i from 1 through length($b) {
+
+   @include placeholder(display--#{nth($b, $i)})
+   {
+        /* @extend %display--#{nth($b, $i)} */
+       display: block;
+   }
+}
+
+@include placeholder(display--inline)
+{
+    display: inline;
+}
+
+@include placeholder(display--inline-block)
+{
+    display: inline-block;
+}
+
+@include placeholder(display--table)
+{
+    display: table;
+}
+@include placeholder(display--table-row)
+{
+    display: table-row;
+}
+@include placeholder(display--table-cell)
+{
+    display: table-cell;
+}

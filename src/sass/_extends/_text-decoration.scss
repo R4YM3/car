@@ -1,0 +1,9 @@
+$text-decorations: (none, underline, line-through, inherit) !default;
+@for $i from 1 through length($text-decorations) {
+
+   @include placeholder(text-decoration--#{nth($text-decorations, $i)})
+   {
+        /* @extend %text-decoration--#{nth($text-decorations, $i)} */
+        text-decoration: nth($text-decorations, $i);
+   }
+}

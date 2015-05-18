@@ -1,0 +1,13 @@
+/*
+    @extend %font-style--italic
+    @extend %font-style--normal
+*/
+@include placeholder(font-style--italic)
+{
+    font-style: italic;
+}
+
+@include placeholder(font-style--normal)
+{
+    font-style: normal;
+}

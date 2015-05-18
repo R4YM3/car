@@ -1,0 +1,9 @@
+$text-transforms: (uppercase, lowercase, inherit) !default;
+@for $i from 1 through length($text-transforms) {
+
+   @include placeholder(text-transform--#{nth($text-transforms, $i)})
+   {
+        /* @extend %text-transform--#{nth($text-transforms, $i)} */
+        text-transform: nth($text-transforms, $i);
+   }
+}

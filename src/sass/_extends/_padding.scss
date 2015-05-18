@@ -1,0 +1,23 @@
+/*
+    Available padding
+    see var.sass for specs
+*/
+@each $name, $size in $sizes
+{
+    /* @extend %padding--#{($name)} */
+    @include placeholder(padding--#{$name})
+    {
+        padding: $size;
+    }
+
+    // $padding--#{$name} : $size;
+
+    @each $name-child, $size-child in $sizes
+    {
+        /* @extend %padding--#{($name)}--#{$name-child} */
+        @include placeholder(padding--#{$name}-#{$name-child})
+        {
+            padding: map-get($sizes, $name) map-get($sizes, $name-child);
+        }
+    }
+}

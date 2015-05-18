@@ -1,34 +1,13 @@
 /*
-    Available colors
+    Available buttons
     see var.sass for specs
-
-    @extend %button--color-light
-    @extend %button--color-light-lighten
-    @extend %button--color-light-darken
-    @extend %button--color-dark
-    @extend %button--color-dark-lighten
-    @extend %button--color-dark-darken
-    @extend %button--color-call-to-action
-    @extend %button--color-call-to-action-lighten
-    @extend %button--color-call-to-action-darken
-    @extend %button--color-call-to-action-inverted
-    @extend %button--color-call-to-action-inverted-lighten
-    @extend %button--color-call-to-action-inverted-darken
-    @extend %button--color-1
-    @extend %button--color-1-lighten
-    @extend %button--color-1-darken
-    @extend %button--color-2
-    @extend %button--color-2-lighten
-    @extend %button--color-2-darken
-    @extend %button--color-3
-    @extend %button--color-3-lighten
-    @extend %button--color-3-darken
 */
-@each $style in map-keys(map-get($global, color))
+@each $name, $color in $colors
 {
-    %button--#{$style}
+    /* @extend %button--#{$name} */
+    @include placeholder(button--#{$name})
     {
         border-radius: 1em;
-        background: map-fetch($global, color $style color );
+        background: $color;
     }
 }

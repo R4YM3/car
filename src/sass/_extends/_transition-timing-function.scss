@@ -1,0 +1,15 @@
+/*
+    Available transition-timing-functions's
+    see var.sass for specs
+*/
+
+$timings: map-get($transitions, timing) !default;
+
+@each $name, $style in $timings
+{
+    /* @extend %transition-timing-function--#{$name} */
+    @include placeholder(transition-timing-function--#{$name})
+    {
+        @include transition-timing-function($style);
+    }
+}

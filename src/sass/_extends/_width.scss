@@ -1,0 +1,19 @@
+/*
+    values are in percentages
+
+    @extend %width--none
+    @extend %width--half
+    @extend %width--full
+*/
+@include placeholder(width--none)
+{
+    width: 0;
+}
+@include placeholder(width--half)
+{
+    width: 50%;
+}
+@include placeholder(width--full)
+{
+    width: 100%;
+}

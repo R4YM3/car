@@ -1,4 +1,29 @@
-@import 'colors.scss';
-@import 'font.scss';
-@import 'vertical-rhythm.scss';
-@import 'buttons.scss';
+/* Properties*/
+@import 'background-color';
+@import 'border';
+@import 'box-sizing';
+@import 'color';
+@import 'cursor';
+@import 'display';
+@import 'font';
+@import 'font-size';
+@import 'font-style';
+@import 'font-weight';
+@import 'height';
+@import 'margin';
+@import 'min-height';
+@import 'outline';
+@import 'padding';
+@import 'position';
+@import 'text-align';
+@import 'text-transform';
+@import 'text-decoration';
+@import 'transition-duration';
+@import 'transition-timing-function';
+@import 'visiblity';
+@import 'width';
+
+/* Objects */
+@import 'vertical-rhythm';
+@import 'buttons';
+@import 'pill';

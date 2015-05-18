@@ -1,0 +1,12 @@
+/*
+    Available font-weights
+    see var.sass for specs
+*/
+@each $current-weight in $font-weights
+{
+    /* @extend %font--#{$current-weight} */
+    @include placeholder(font-weight--#{$current-weight})
+    {
+        font-weight: $current-weight;
+    }
+}
