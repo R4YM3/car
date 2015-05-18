@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Driving</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="../../.tmp/css/screen.css">
+    </head>
+    <body class="driving">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <section class="feedback">
+            <header>
+                <h2>Driving feedback</h2>
+            </header>
+
+            <div class="circle g1">1</div>
+            <div class="circle g2 down">2</div>
+            <div class="circle g3 down">3</div>
+            <div class="circle g4 down">4</div>
+            <div class="circle g5 down">5</div>
+            <div class="circle g6 down">6</div>
+
+        </section>
+
+        <div class="bubble"></div>
+
+        <script data-main="../js/config" src="../../components/requirejs/require.js"></script>
+
+        <script>
+            require(['config'], function(){
+                require(['views/driving']);
+            });
+        </script>
+    </body>
+</html>
