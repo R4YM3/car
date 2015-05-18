@@ -3,7 +3,7 @@
     see display.sass for specs
 */
 
-$a: ("hide", "inactive", "disabled", "none") !default;
+$a: (hide, inactive, disabled, none) !default;
 @for $i from 1 through length($a) {
 
    @include placeholder(display--#{nth($a, $i)})
@@ -13,7 +13,7 @@ $a: ("hide", "inactive", "disabled", "none") !default;
    }
 }
 
-$b: ("show", "block", "active") !default;
+$b: (show, block, active) !default;
 @for $i from 1 through length($b) {
 
    @include placeholder(display--#{nth($b, $i)})
