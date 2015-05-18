@@ -17,15 +17,17 @@ module.exports = function(grunt) {
 
     // Configurable paths
     var config = {
+        app: 'src',
         test: 'test',
         dist: 'dist',
         tmp: '.tmp',
-        app: 'src',
-        html: 'html',
+        html: 'templates/wtf',
         sass: 'sass',
         css: 'css',
+        fonts: 'fonts',
         js: 'js',
-        img: 'img'
+        img: 'img',
+        bower: 'components'
     };
 
     grunt.initConfig({
@@ -47,7 +49,8 @@ module.exports = function(grunt) {
 
         //clean bower and tmp folder
         clean: {
-            bower: 'components',
+            css: '<%= config.app %>/css',
+            bower: '<%= config.bower %>',
             tmp: '<%= config.tmp %>',
             test: '<%= config.test %>', //not used
             dist: '<%= config.dist %>',
@@ -64,14 +67,19 @@ module.exports = function(grunt) {
                     dest: '<%= config.test %>/<%= config.js %>'
                 }, {
                     expand: true,
-                    cwd: '<%= config.app %>/<%= config.html %>',
+                    cwd: '<%= config.html %>',
                     src: ['**'],
-                    dest: '<%= config.test %>/<%= config.html %>'
+                    dest: '<%= config.test %>/html'
                 }, {
                     expand: true,
-                    cwd: '<%= config.tmp %>/<%= config.css %>',
+                    cwd: '<%= config.app %>/<%= config.css %>',
                     src: ['**'],
                     dest: '<%= config.test %>/<%= config.css %>'
+                }, {
+                    expand: true,
+                    cwd: '<%= config.app %>/<%= config.bower %>',
+                    src: ['**'],
+                    dest: '<%= config.test %>/<%= config.bower %>'
                 }]
             },
             dist: {
@@ -82,24 +90,34 @@ module.exports = function(grunt) {
                     dest: '<%= config.dist %>/<%= config.js %>'
                 }, {
                     expand: true,
+                    cwd: '<%= config.test %>/<%= config.bower %>',
+                    src: ['**'],
+                    dest: '<%= config.dist %>/<%= config.bower %>'
+                }, {
+                    expand: true,
                     cwd: '<%= config.app %>/<%= config.img %>',
                     src: ['**'],
                     dest: '<%= config.dist %>/<%= config.img %>'
+                }, {
+                    expand: true,
+                    cwd: '<%= config.app %>/<%= config.fonts %>',
+                    src: ['**'],
+                    dest: '<%= config.dist %>/<%= config.fonts %>'
                 }]
             }
         },
 
         watch: {
             sass: {
-                files: ['<%= config.app %>/<%= config.sass %>/*.scss'],
-                tasks: ['csscomb', 'csslint', 'compass']
+                files: ['<%= config.app %>/<%= config.sass %>/**/*.scss'],
+                tasks: ['clean:css', 'csscomb', 'csslint', 'compass']
             },
             js: {
                 files: ['<%= config.app %>/<%= config.js %>/**/*.js', 'GruntFile.js'],
                 tasks: ['jshint', 'jsbeautifier']
             },
             html: {
-                files: ['<%= config.app %>/<%= config.html %>/**/*.html'],
+                files: ['<%= config.html %>/**/*.html'],
                 tasks: ['validation']
             }
         },
@@ -130,10 +148,10 @@ module.exports = function(grunt) {
                 //remoteFiles: ['html/moving-from-wordpress-to-octopress/',
                 //              'css/site-preloading-methods/'], //or
                 //remoteFiles: 'validation-files.json', // JSON file contains array of page paths.
-                relaxerror: ['no document type declaration'] //ignores these errors
+                relaxerror: ['no document type declaration', 'character \"{\" not allowed in prolog', 'end of document in prolog', 'NET-enabling start-tag requires SHORTTAG YES'] //ignores these errors
             },
             files: {
-                src: ['<%= config.app %>/*/**.html', ]
+                src: ['<%= config.html %>/**/*.html', ]
             }
         },
 
@@ -146,13 +164,13 @@ module.exports = function(grunt) {
                 options: {
                     import: 2
                 },
-                src: ['<%= config.tmp %>/<%= config.css %>/**/*.css']
+                src: ['<%= config.app %>/<%= config.css %>/**/*.css']
             },
             lax: {
                 options: {
                     import: false
                 },
-                src: ['<%= config.tmp %>/<%= config.css %>/**/*.css']
+                src: ['<%= config.app %>/<%= config.css %>/**/*.css']
             }
         },
 
@@ -313,7 +331,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     src: [
-                        '<%= config.dist %>/<%= config.html %>**/*.html'
+                        '<%= config.dist %>/html**/*.html'
                     ]
                 }
             }
