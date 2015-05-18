@@ -11,9 +11,7 @@
     "html5shiv": "~3.7.2",
     "meyer-reset": "*",
     "fitvids": "~1.1.0",
-    "FlowTypeJS": "~1.1.0"
-  },
-  "devDependencies": {
-    "sass-easing": "*"
+    "FlowTypeJS": "~1.1.0",
+    "sticky": "https://github.com/kudago/sticky.git"
   }
 }
