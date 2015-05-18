@@ -12,7 +12,11 @@
 @import '_extends/all.scss'; //are now mixins for @media support use @include _(##) instead of @extend %##
 @import '_helpers/all.scss';
 
+//font
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+
 //atoms
+@import 'atoms/colors.scss';
 
 //molecules
 
@@ -21,3 +25,4 @@
 //templates
 
 //pages
+@import 'pages/driving.scss';
