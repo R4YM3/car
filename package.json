@@ -1,11 +1,12 @@
 {
-  "name": "Projectname",
-  "version": "0.1.0",
-  "author": "Raymond Schweers <raymond@hetwebbureau.nl>",
+  "name": "Boilerplate",
+  "version": "0.0.1",
+  "author": "Raymond Schweers",
+  "description": "Project description",
   "contributors": [
     {
-      "name": "Frontend developer",
-      "email": "foo.bar@sanoma.com"
+      "name": "Raymond Schweers",
+      "email": "Raymond@hetwebbureau.nl"
     }
   ],
   "dependencies": {
@@ -13,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/R4YM3/boilerplate/"
+    "url": "REPO-URL"
   },
   "bugs": {
-    "url": "https://github.com/R4YM3/boilerplate/issues"
+    "url": "JIRA-URL"
   },
   "devDependencies": {
     "bower": "^1.x",
