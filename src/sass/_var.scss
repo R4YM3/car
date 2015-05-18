@@ -7,53 +7,45 @@ $colors: (
     'black': #000,
     'black-lighten': #252525,
 
-    'alpha': rgba(0,0,0,.05),
-    'alpha-lighten': rgba(0,0,0,.03),
+    'alpha': rgba(0,0,0,.4),
+    'alpha-lighten': rgba(0,0,0,.3),
     'alpha-darken': rgba(0,0,0,.1),
 
+    'red': #ee4242,
+    'red-lighten': lighten(#ee4242,10%),
+    'red-darken': darken(#ee4242, 15%),
+
+    'orange': #ff8157,
+    'orange-lighten': lighten(#ff8157,10%),
+    'orange-darken': darken(#ff8157, 15%),
+
+    'green': #44d26b,
+    'green-lighten': lighten(#44d26b,10%),
+    'green-darken': darken(#44d26b, 15%),
+
     'cta': #ff0,
-    'cta-lighten': lighten(#ff0, 30%),
-    'cta-darken': darken(#ff0, 3%),
-
-    'yellow':  #fffcbb,
-    'yellow-lighten': lighten(#fffcbb, 8%),
-    'yellow-darken': darken(#fffcbb, 15%),
-
-    'pink': #ffceeb,
-    'pink-lighten':  #fedcf0,
-    'pink-darken': darken(#ffceeb, 15%),
-
-    'blue': #bcf2ff,
-    'blue-lighten': #cff5fe,
-    'blue-darken': darken(#bcf2ff, 15%),
-
-    'green': #aff4d5,
-    'green-lighten': #c6f6e0,
-    'green-darken': darken(#aff4d5, 15%),
+    'cta-lighten': lighten(#44d26b, 30%),
+    'cta-darken': darken(#44d26b, 3%),
 
     'transparent': transparent
 );
 
 $fonts: (
     //max 4 each
-    bold: (
-        font-family: #{NovecentowideDemiBold, Helvetica Neue, Arial, sans-serif},
-        font-weight: normal,
-    ),
-    medium: (
-        font-family: #{NovecentowideMedium, Helvetica Neue, Arial, sans-serif},
-        font-weight: normal
-    ),
-    book: (
-        font-family: #{NovecentowideBook, Helvetica Neue, Arial, sans-serif},
-        font-weight: 100
+    light: (
+        font-family: #{'Source Sans Pro', Helvetica Neue, Arial, sans-serif},
+        font-weight: 300,
     ),
     normal: (
-        font-family: #{Arial, Helvetica, sans-serif},
-        font-weight: normal
+        font-family: #{'Source Sans Pro', Helvetica Neue, Arial, sans-serif},
+        font-weight: 400
+    ),
+    bold: (
+        font-family: #{'Source Sans Pro', Helvetica Neue, Arial, sans-serif},
+        font-weight: 600
     ),
     icons: (
-        font-family: #{wtf},
+        font-family: #{car},
         font-weight: normal
     )
 );
@@ -113,7 +105,7 @@ $typo: (
     )
 );
 
-$font-weights: 100 200 300 400 500 600 700 800 900 bold bolder normal;
+$font-weights: 300 400 600 bold bolder normal;
 
 $breakpoints: (
     xs: "screen and (max-width: 320px)",
@@ -163,9 +155,9 @@ $transitions: (
     speed: (
         xs: 250ms,
         s: 500ms,
-        m: 1000ms,
-        l: 1500ms,
-        sl: 2000ms
+        m: 750ms,
+        l: 1000ms,
+        sl: 1500ms
     ),
     timing: (
         easing: ease-in-out,
@@ -175,43 +167,4 @@ $transitions: (
 );
 
 //VIEWS
-$views: (
-    article: (
-        body: (
-            height: 100%,
-            min-height: 100%,
-            width:auto,
-            min-width: 320px,
-            max-width: none,
-            padding: 0 0 0 17.5em,
-            margin: 0 auto,
-        ),
-        main: (
-            height: auto,
-            min-height: 100%,
-            width: auto,
-            min-width: 320px,
-            max-width: none,
-            padding: 0 21.5em 1.5em 0,
-            margin:0,
-        ),
-        sidebar: (
-            height: 100%,
-            min-height: 100%,
-            width: 20em,
-            min-width: 0,
-            max-width: none,
-            padding:0,
-            margin:0,
-        ),
-        header: (
-            height: 100%,
-            min-height: 100%,
-            width: 16em,
-            min-width: 0,
-            max-width: none,
-            padding: 0,
-            margin: 0,
-        )
-    )
-);
+
