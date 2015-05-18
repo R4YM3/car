@@ -1,0 +1,17 @@
+//exports all colors from var.scss
+
+@each $name, $color in $colors
+{
+    .color--#{$name}
+    {
+        @include _(color--#{$name});
+    }
+}
+
+@each $name, $color in $colors
+{
+    .background-color--#{$name}
+    {
+        @include _(background-color--#{$name});
+    }
+}
