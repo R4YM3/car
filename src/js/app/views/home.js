@@ -1,5 +1,5 @@
-define(['jquery', 'sticky-kit'], function($) {
+define(['jquery'], function($) {
     'use strict';
 
-    $("#foo").text("world!");
+    $("body").focus();
 });
