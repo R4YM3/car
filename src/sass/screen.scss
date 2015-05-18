@@ -4,19 +4,20 @@
 @import 'compass/css3';
 
 //global
-@import '../../components/sass-easing/sass-easing.scss';
+// @import '../components/sass-easing/sass-easing.scss';
 @import 'var.scss';
 
 @import '_functions/all.scss';
 @import '_mixins/all.scss';
-@import '_extends/all.scss';
+@import '_extends/all.scss'; //are now mixins for @media support use @include _(##) instead of @extend %##
+@import '_helpers/all.scss';
 
 //atoms
-@import 'atoms/fonts.scss';
-//@import 'atoms/icons.scss';
-@import 'atoms/heading.scss';
+
+//molecules
+
+//organisms
 
 //templates
-@import 'templates/default.scss';
 
 //pages
